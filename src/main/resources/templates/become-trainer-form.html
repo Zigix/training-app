@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trainer App - log in</title>
+
+    <link th:href="@{/css/main.css}" type="text/css" rel="stylesheet">
+</head>
+<body>
+
+    <form th:object="${trainerDetails}" action="#" th:action="@{/process-trainer-form}" method="POST">
+        <input type="text" placeholder="username"
+               id="firstName" th:field="*{firstName}">
+        <input type="text" placeholder="username"
+               id="lastName" th:field="*{lastName}">
+        <input type="text" placeholder="username"
+               id="phoneNumber" th:field="*{phoneNumber}">
+        <input type="text" placeholder="username"
+               id="description" th:field="*{description}">
+        <input type="submit">
+    </form>
+
+</body>
+</html>

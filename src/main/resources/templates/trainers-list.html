@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trainer App - log in</title>
+
+    <link th:href="@{/css/main.css}" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <table>
+        <tr th:each="trainer: ${trainers}">
+            <td th:text="${trainer.email}">
+            <td th:text="${trainer.username}">
+            <td th:text="${trainer.firstName}">
+            <td th:text="${trainer.lastName}">
+            <td th:text="${trainer.phoneNumber}">
+            <td th:text="${trainer.description}">
+        </tr>
+    </table>
+</body>
+</html>
