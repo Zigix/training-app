@@ -1,0 +1,234 @@
+html, body {
+    /* Background pattern from Toptal Subtle Patterns */
+    background-image: url(../img/trainer-app-bg.jpg);
+    margin: 0;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+}
+
+i {
+    text-shadow:
+            -1px 0px 0px #05c705c9,
+            1px 0px 0px #05c705c9,
+            0px -1px 0px #05c705c9,
+            0px 1px 0px #05c705c9;
+}
+
+.main-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+    height: 100%;
+}
+
+.greeting {
+    font-size: 72px;
+    margin: 40px;
+    text-align: center;
+}
+
+.user-form-container {
+    width: 450px;
+    min-height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    border: 3px solid #05c705c9;
+    background-color: #1b1b1b;
+}
+
+.form-item {
+    margin: 22px 30px 22px 30px;
+}
+
+.form-header {
+    font-size: 28px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+form {
+    padding: 0 40px 5px 40px;
+}
+
+input {
+    font-weight: 600;
+    width: 250px;
+    outline: none;
+    padding: 10px;
+    border-radius: 10px;
+    border: 3px solid green;
+}
+
+input:focus {
+    box-shadow: 0 0 7px 2px #21FF38;
+}
+
+button {
+    border-radius: 10px;
+    padding: 8px;
+    font-size: 22px;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.button-submit {
+    width: 276px;
+    background-color: #3ec45c;
+    border: 3px solid #1ca23a;
+}
+
+.button-submit:hover {
+    background-color: #2db34b;
+}
+
+.button-submit:focus {
+    box-shadow: 0 0 5px 2px #21FF38;
+}
+
+#redirect-sign-up {
+    width: 150px;
+    background-color: #5555ed;
+    border: 3px solid #3333cb;
+}
+
+#redirect-sign-up:hover {
+    background-color: #4444dc;
+}
+
+#redirect-sign-up:focus {
+    box-shadow: 0 0 5px 2px #418fc9;
+}
+
+#account-question {
+    padding: 5px 0 18px 0;
+}
+
+.validationError {
+    font-size: 14px;
+    display: block;
+    color: red;
+    padding-bottom: 5px;
+}
+
+.error-on-input {
+    border: 3px solid red;
+}
+
+.error-on-input:focus {
+    box-shadow: 0 0 5px 2px red;
+}
+
+/* index.html */
+#welcome-title {
+    font-size: 50px;
+    letter-spacing: 2px;
+    color: whitesmoke;
+}
+
+.main-content {
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 70px;
+}
+
+.button-join {
+    border-radius: 10px;
+    padding: 8px;
+    font-size: 42px;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    background-color: #3ec45c;
+    border: 3px solid #1ca23a;
+    width: 700px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+footer {
+    color: white;
+    font-size: 18px;
+}
+
+/* registration successful page */
+.cnt {
+    width: 100vw;
+    text-align: center;
+}
+
+#confirmation-info-area {
+    background-color: #1b1b1b;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 30px;
+    border-radius: 10px;
+    border: 3px solid #1ca23a;
+    width: 90%;
+    color: white;
+    padding: 20px;
+}
+
+#back-to-login-btn {
+    width: 200px;
+    margin-top: 20px;
+    color: white;
+    border-radius: 10px;
+    font-size: 22px;
+    cursor: pointer;
+    background-color: #5555ed;
+    border: 3px solid #3333cb;
+}
+
+#back-to-login-btn:hover {
+    background-color: #4444dc;
+}
+
+#back-to-login-btn:focus {
+    box-shadow: 0 0 5px 2px #418fc9;
+}
+
+
+.not-confirmed-email-block {
+    width: 300px;
+    margin: 0;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 105;
+    border: 3px solid #05c705c9;
+    background-color: #1b1b1b;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.not-confirmed-email-bg {
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.6;
+    z-index: 104;
+}
+
+.ok-button {
+    text-transform: uppercase;
+    width: 120px;
+    color: white;
+    background-color: #5555ed;
+    border: 3px solid #3333cb;
+}
+
+.ok-button:hover {
+    background-color: #4444dc;
+}
+
+.ok-button:focus {
+    box-shadow: 0px 0px 5px 2px #418fc9;
+}
