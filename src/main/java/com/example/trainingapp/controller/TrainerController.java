@@ -1,6 +1,7 @@
 package com.example.trainingapp.controller;
 
 import com.example.trainingapp.domain.dto.TrainerDetailsDto;
+import com.example.trainingapp.domain.dto.TrainerDto;
 import com.example.trainingapp.domain.model.User;
 import com.example.trainingapp.service.TrainerDetailsService;
 import com.example.trainingapp.service.UserContextService;
@@ -9,7 +10,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 @Controller
 @RequiredArgsConstructor
@@ -32,8 +38,18 @@ public class TrainerController {
 
     @GetMapping("/show-trainers")
     public String showTrainers(Model model) {
-        model.addAttribute("trainers", trainerDetailsService.getTrainers());
+        User loggedUser = userContextService.getLoggedUser();
+        List<TrainerDto> trainers = trainerDetailsService.getTrainers()
+                .stream()
+                .filter(t -> !Objects.equals(t.getTrainerId(), loggedUser.getId()))
+                .collect(Collectors.toList());
+        model.addAttribute("trainers", trainers);
         System.out.println("Trainers: " + trainerDetailsService.getTrainers());
         return "trainers-list";
     }
+
+    /*@GetMapping("/request-trainer/{trainerId}")
+    public String requestTrainer(@PathVariable Long trainerId) {
+
+    }*/
 }

@@ -30,7 +30,7 @@ public class TrainerDetailsService {
         return trainerDetailsRepository.findAll().stream()
                 .map(trainerDetails ->
                         TrainerDto.builder()
-                        .trainerId(trainerDetails.getId())
+                        .trainerId(trainerDetails.getTrainer().getId())
                         .email(trainerDetails.getTrainer().getEmail())
                         .username(trainerDetails.getTrainer().getUsername())
                         .firstName(trainerDetails.getFirstName())
