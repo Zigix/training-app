@@ -3,8 +3,10 @@ package com.example.trainingapp.controller;
 import com.example.trainingapp.domain.dto.TrainerDetailsDto;
 import com.example.trainingapp.domain.dto.TrainerDto;
 import com.example.trainingapp.domain.model.User;
+import com.example.trainingapp.domain.model.UserTrainer;
 import com.example.trainingapp.service.TrainerDetailsService;
 import com.example.trainingapp.service.UserContextService;
+import com.example.trainingapp.service.UserTrainerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,6 +24,7 @@ import java.util.stream.Collectors;
 public class TrainerController {
     private final UserContextService userContextService;
     private final TrainerDetailsService trainerDetailsService;
+    private final UserTrainerService userTrainerService;
 
     @GetMapping("/become-trainer")
     public String becomeTrainer(Model model) {
@@ -48,8 +51,11 @@ public class TrainerController {
         return "trainers-list";
     }
 
-    /*@GetMapping("/request-trainer/{trainerId}")
-    public String requestTrainer(@PathVariable Long trainerId) {
-
-    }*/
+    @GetMapping("/request-trainer/{trainerId}")
+    public String requestTrainer(@PathVariable Long trainerId, Model model) {
+        User loggedUser = userContextService.getLoggedUser();
+        UserTrainer userTrainer = userTrainerService.connectUserWithTrainer(trainerId, loggedUser);
+        model.addAttribute("userTrainer", userTrainer);
+        return "redirect:/"; //TODO: <-- jakiś widok po polaczeniu usera z trenerem
+    }
 }

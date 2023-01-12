@@ -18,6 +18,7 @@ public class User implements UserDetails {
     private String username;
     private String email;
     private String password;
+    private boolean isTrainer = false;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

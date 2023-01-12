@@ -5,6 +5,7 @@ import com.example.trainingapp.domain.dto.TrainerDto;
 import com.example.trainingapp.domain.model.TrainerDetails;
 import com.example.trainingapp.domain.model.User;
 import com.example.trainingapp.repository.TrainerDetailsRepository;
+import com.example.trainingapp.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +16,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class TrainerDetailsService {
     private final TrainerDetailsRepository trainerDetailsRepository;
+    private final UserRepository userRepository;
 
     public TrainerDetails addTrainer(TrainerDetailsDto trainerDetailsDto, User user) {
         TrainerDetails trainerDetails = new TrainerDetails();
@@ -23,6 +25,8 @@ public class TrainerDetailsService {
         trainerDetails.setPhoneNumber(trainerDetailsDto.getPhoneNumber());
         trainerDetails.setDescription(trainerDetailsDto.getDescription());
         trainerDetails.setTrainer(user);
+        user.setTrainer(true);
+        userRepository.save(user);
         return trainerDetailsRepository.save(trainerDetails);
     }
 

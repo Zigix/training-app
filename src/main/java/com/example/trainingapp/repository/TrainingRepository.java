@@ -1,10 +1,9 @@
 package com.example.trainingapp.repository;
 
-import com.example.trainingapp.domain.model.TrainerDetails;
+import com.example.trainingapp.domain.model.Training;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface TrainerDetailsRepository extends JpaRepository<TrainerDetails, Long> {
-
+public interface TrainingRepository extends JpaRepository<Training, Long> {
 }
